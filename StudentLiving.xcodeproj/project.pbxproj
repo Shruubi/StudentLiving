@@ -19,6 +19,7 @@
 		E48D9D0A199F3351003351E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48D9CF2199F3351003351E5 /* UIKit.framework */; };
 		E48D9D12199F3351003351E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E48D9D10199F3351003351E5 /* InfoPlist.strings */; };
 		E48D9D14199F3351003351E5 /* StudentLivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D13199F3351003351E5 /* StudentLivingTests.m */; };
+		E48D9D24199F33F9003351E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48D9D23199F33F9003351E5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +41,15 @@
 		E48D9CF8199F3351003351E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E48D9CFA199F3351003351E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E48D9CFC199F3351003351E5 /* StudentLiving-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudentLiving-Prefix.pch"; sourceTree = "<group>"; };
-		E48D9CFD199F3351003351E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E48D9CFE199F3351003351E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E48D9CFD199F3351003351E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		E48D9CFE199F3351003351E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		E48D9D00199F3351003351E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E48D9D06199F3351003351E5 /* StudentLivingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentLivingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48D9D07199F3351003351E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E48D9D0F199F3351003351E5 /* StudentLivingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StudentLivingTests-Info.plist"; sourceTree = "<group>"; };
 		E48D9D11199F3351003351E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E48D9D13199F3351003351E5 /* StudentLivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentLivingTests.m; sourceTree = "<group>"; };
+		E48D9D23199F33F9003351E5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,9 @@
 		E48D9CF4199F3351003351E5 /* StudentLiving */ = {
 			isa = PBXGroup;
 			children = (
-				E48D9CFD199F3351003351E5 /* AppDelegate.h */,
-				E48D9CFE199F3351003351E5 /* AppDelegate.m */,
+				E48D9D22199F33CB003351E5 /* delegate */,
+				E48D9D21199F33BE003351E5 /* lib */,
+				E48D9D1D199F3378003351E5 /* ui */,
 				E48D9D00199F3351003351E5 /* Images.xcassets */,
 				E48D9CF5199F3351003351E5 /* Supporting Files */,
 			);
@@ -142,6 +145,54 @@
 				E48D9D10199F3351003351E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E48D9D1D199F3378003351E5 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D20199F33AD003351E5 /* support */,
+				E48D9D1F199F339A003351E5 /* storyboard */,
+				E48D9D1E199F3389003351E5 /* controllers */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		E48D9D1E199F3389003351E5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		E48D9D1F199F339A003351E5 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D23199F33F9003351E5 /* Main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		E48D9D20199F33AD003351E5 /* support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
+		E48D9D21199F33BE003351E5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E48D9D22199F33CB003351E5 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9CFD199F3351003351E5 /* AppDelegate.h */,
+				E48D9CFE199F3351003351E5 /* AppDelegate.m */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +242,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Swayn Consulting";
 				TargetAttributes = {
+					E48D9CEA199F3351003351E5 = {
+						DevelopmentTeam = 8LEZ357CUG;
+					};
 					E48D9D05199F3351003351E5 = {
 						TestTargetID = E48D9CEA199F3351003351E5;
 					};
@@ -219,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48D9D24199F33F9003351E5 /* Main.storyboard in Resources */,
 				E48D9CF9199F3351003351E5 /* InfoPlist.strings in Resources */,
 				E48D9D01199F3351003351E5 /* Images.xcassets in Resources */,
 			);
@@ -359,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StudentLiving/StudentLiving-Prefix.pch";
 				INFOPLIST_FILE = "StudentLiving/StudentLiving-Info.plist";
@@ -372,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StudentLiving/StudentLiving-Prefix.pch";
 				INFOPLIST_FILE = "StudentLiving/StudentLiving-Info.plist";
