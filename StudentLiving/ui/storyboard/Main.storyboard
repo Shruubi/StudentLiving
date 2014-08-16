@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Overview-->
+        <!--Overview View Controller - Overview-->
         <scene sceneID="70a-s5-XJ9">
             <objects>
-                <viewController id="9dJ-Oj-Gep" sceneMemberID="viewController">
+                <viewController id="9dJ-Oj-Gep" customClass="OverviewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbP-Jv-061">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-231" y="29"/>
         </scene>
-        <!--View Controller - Additional Expenditures-->
+        <!--Expenditures View Controller - Additional Expenditures-->
         <scene sceneID="guk-5F-Gnt">
             <objects>
-                <viewController id="Q9X-EV-Eng" sceneMemberID="viewController">
+                <viewController id="Q9X-EV-Eng" customClass="ExpendituresViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FF-qr-ZPL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,7 +103,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SzU-ZJ-Ei2">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SzU-ZJ-Ei2" customClass="ExpenditureCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SzU-ZJ-Ei2" id="Yj3-fj-wP9">
@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="829" y="1080"/>
         </scene>
-        <!--View Controller - Add Expenditure-->
+        <!--Add Expenditure View Controller - Add Expenditure-->
         <scene sceneID="kLH-ax-Ea7">
             <objects>
-                <viewController id="dWH-ii-k9c" sceneMemberID="viewController">
+                <viewController id="dWH-ii-k9c" customClass="AddExpenditureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ff-gQ-SXa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="1305" y="1080"/>
         </scene>
-        <!--View Controller - Projections-->
+        <!--Projections View Controller - Projections-->
         <scene sceneID="pzU-IG-5YR">
             <objects>
-                <viewController id="Zbt-pc-hov" sceneMemberID="viewController">
+                <viewController id="Zbt-pc-hov" customClass="ProjectionsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ooz-wc-dli">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -20,6 +20,11 @@
 		E48D9D12199F3351003351E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E48D9D10199F3351003351E5 /* InfoPlist.strings */; };
 		E48D9D14199F3351003351E5 /* StudentLivingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D13199F3351003351E5 /* StudentLivingTests.m */; };
 		E48D9D24199F33F9003351E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48D9D23199F33F9003351E5 /* Main.storyboard */; };
+		E48D9D2B199F40CE003351E5 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D2A199F40CE003351E5 /* OverviewViewController.m */; };
+		E48D9D2E199F40DD003351E5 /* ProjectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D2D199F40DD003351E5 /* ProjectionsViewController.m */; };
+		E48D9D31199F40EB003351E5 /* ExpendituresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D30199F40EB003351E5 /* ExpendituresViewController.m */; };
+		E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */; };
+		E48D9D38199F411B003351E5 /* ExpenditureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D37199F411B003351E5 /* ExpenditureCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,16 @@
 		E48D9D11199F3351003351E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E48D9D13199F3351003351E5 /* StudentLivingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentLivingTests.m; sourceTree = "<group>"; };
 		E48D9D23199F33F9003351E5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E48D9D29199F40CE003351E5 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
+		E48D9D2A199F40CE003351E5 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
+		E48D9D2C199F40DD003351E5 /* ProjectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionsViewController.h; sourceTree = "<group>"; };
+		E48D9D2D199F40DD003351E5 /* ProjectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectionsViewController.m; sourceTree = "<group>"; };
+		E48D9D2F199F40EB003351E5 /* ExpendituresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpendituresViewController.h; sourceTree = "<group>"; };
+		E48D9D30199F40EB003351E5 /* ExpendituresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpendituresViewController.m; sourceTree = "<group>"; };
+		E48D9D32199F40F6003351E5 /* AddExpenditureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExpenditureViewController.h; sourceTree = "<group>"; };
+		E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenditureViewController.m; sourceTree = "<group>"; };
+		E48D9D36199F411B003351E5 /* ExpenditureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenditureCell.h; sourceTree = "<group>"; };
+		E48D9D37199F411B003351E5 /* ExpenditureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenditureCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +175,10 @@
 		E48D9D1E199F3389003351E5 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E48D9D28199F40AE003351E5 /* add expenditure */,
+				E48D9D27199F4098003351E5 /* expenditures */,
+				E48D9D26199F407B003351E5 /* projections */,
+				E48D9D25199F406E003351E5 /* overview */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -193,6 +212,52 @@
 				E48D9CFE199F3351003351E5 /* AppDelegate.m */,
 			);
 			path = delegate;
+			sourceTree = "<group>";
+		};
+		E48D9D25199F406E003351E5 /* overview */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D29199F40CE003351E5 /* OverviewViewController.h */,
+				E48D9D2A199F40CE003351E5 /* OverviewViewController.m */,
+			);
+			path = overview;
+			sourceTree = "<group>";
+		};
+		E48D9D26199F407B003351E5 /* projections */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D2C199F40DD003351E5 /* ProjectionsViewController.h */,
+				E48D9D2D199F40DD003351E5 /* ProjectionsViewController.m */,
+			);
+			path = projections;
+			sourceTree = "<group>";
+		};
+		E48D9D27199F4098003351E5 /* expenditures */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D35199F4105003351E5 /* cell */,
+				E48D9D2F199F40EB003351E5 /* ExpendituresViewController.h */,
+				E48D9D30199F40EB003351E5 /* ExpendituresViewController.m */,
+			);
+			path = expenditures;
+			sourceTree = "<group>";
+		};
+		E48D9D28199F40AE003351E5 /* add expenditure */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D32199F40F6003351E5 /* AddExpenditureViewController.h */,
+				E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */,
+			);
+			path = "add expenditure";
+			sourceTree = "<group>";
+		};
+		E48D9D35199F4105003351E5 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				E48D9D36199F411B003351E5 /* ExpenditureCell.h */,
+				E48D9D37199F411B003351E5 /* ExpenditureCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E48D9D38199F411B003351E5 /* ExpenditureCell.m in Sources */,
 				E48D9CFF199F3351003351E5 /* AppDelegate.m in Sources */,
+				E48D9D31199F40EB003351E5 /* ExpendituresViewController.m in Sources */,
+				E48D9D2E199F40DD003351E5 /* ProjectionsViewController.m in Sources */,
+				E48D9D2B199F40CE003351E5 /* OverviewViewController.m in Sources */,
+				E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */,
 				E48D9CFB199F3351003351E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
