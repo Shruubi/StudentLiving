@@ -25,6 +25,7 @@
 		E48D9D31199F40EB003351E5 /* ExpendituresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D30199F40EB003351E5 /* ExpendituresViewController.m */; };
 		E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */; };
 		E48D9D38199F411B003351E5 /* ExpenditureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D37199F411B003351E5 /* ExpenditureCell.m */; };
+		E48D9D3B199F423F003351E5 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D3A199F423F003351E5 /* UIView+FormScroll.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenditureViewController.m; sourceTree = "<group>"; };
 		E48D9D36199F411B003351E5 /* ExpenditureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenditureCell.h; sourceTree = "<group>"; };
 		E48D9D37199F411B003351E5 /* ExpenditureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenditureCell.m; sourceTree = "<group>"; };
+		E48D9D39199F423F003351E5 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
+		E48D9D3A199F423F003351E5 /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 		E48D9D20199F33AD003351E5 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				E48D9D39199F423F003351E5 /* UIView+FormScroll.h */,
+				E48D9D3A199F423F003351E5 /* UIView+FormScroll.m */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				E48D9D31199F40EB003351E5 /* ExpendituresViewController.m in Sources */,
 				E48D9D2E199F40DD003351E5 /* ProjectionsViewController.m in Sources */,
 				E48D9D2B199F40CE003351E5 /* OverviewViewController.m in Sources */,
+				E48D9D3B199F423F003351E5 /* UIView+FormScroll.m in Sources */,
 				E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */,
 				E48D9CFB199F3351003351E5 /* main.m in Sources */,
 			);

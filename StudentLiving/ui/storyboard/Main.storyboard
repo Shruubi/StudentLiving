@@ -149,6 +149,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="dWH-ii-k9c" id="smV-Dc-BB2"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -166,6 +169,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="dWH-ii-k9c" id="mka-2p-R7Z"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -177,13 +183,31 @@
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onSavePressed:" destination="dWH-ii-k9c" eventType="touchUpInside" id="Sh2-cV-27u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AJG-m6-GeW" appends="YES" id="c1P-QU-WiR"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Expenditure" id="ITY-KB-X3s"/>
+                    <connections>
+                        <outlet property="costsContainer" destination="Iz4-TL-q55" id="gVU-he-s3x"/>
+                        <outlet property="descriptionContainer" destination="d80-ec-FNx" id="A8c-OX-YPW"/>
+                        <outlet property="expenditureCostTextField" destination="l6x-fi-fQc" id="5X2-tT-e8U"/>
+                        <outlet property="expenditureDescriptionTextField" destination="68Z-gw-nt8" id="gdf-b9-rkC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c79-iF-4GL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AJG-m6-GeW">
+                    <connections>
+                        <action selector="onBackgroundViewTouched:" destination="dWH-ii-k9c" id="mWV-YU-BXU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1305" y="1080"/>
         </scene>
@@ -207,6 +231,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="mOa-nM-CoL"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -224,6 +251,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="wf8-Hh-7Ft"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -241,6 +271,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="awY-ZZ-bix"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -258,6 +291,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="bKu-M0-toN"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -275,6 +311,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="AZ4-ov-rxp"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -286,13 +325,37 @@
                                 <state key="normal" title="Update Projections">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onUpdateProjections:" destination="Zbt-pc-hov" eventType="touchUpInside" id="xBc-KS-n6x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Hhs-OM-Lg5" appends="YES" id="GDa-oJ-UNk"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Projections" id="6J3-sF-ZbF"/>
+                    <connections>
+                        <outlet property="billsContainer" destination="kxO-Z7-GBR" id="L1f-pT-w4Q"/>
+                        <outlet property="billsTextField" destination="Y08-qX-XFu" id="1mi-Ec-LCa"/>
+                        <outlet property="foodCostsContainer" destination="DUM-ga-e82" id="Sdd-x4-57N"/>
+                        <outlet property="foodCostsTextField" destination="hgW-BP-XLi" id="4SP-eX-UHI"/>
+                        <outlet property="housingContainer" destination="rCJ-Hf-Afz" id="hrC-Pf-zkN"/>
+                        <outlet property="housingCostsTextField" destination="TEi-Ks-dCJ" id="y9E-aO-852"/>
+                        <outlet property="miscCostsContainer" destination="Kcq-dm-6cW" id="Y6f-jN-AfV"/>
+                        <outlet property="miscCostsTextField" destination="TIh-l3-Jc8" id="YmM-YW-TYL"/>
+                        <outlet property="petrolCostsContainer" destination="O43-ma-Ef7" id="hVW-gf-MHa"/>
+                        <outlet property="petrolCostsTextField" destination="uBy-Dh-sEn" id="eC2-g1-s3l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cih-g9-MB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hhs-OM-Lg5">
+                    <connections>
+                        <action selector="onBackgroundViewTouched:" destination="Zbt-pc-hov" id="I72-04-SlR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="829" y="355"/>
         </scene>
