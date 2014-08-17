@@ -38,12 +38,25 @@
 @implementation ProjectionsViewController
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.currentMonth = [[DataModelManager getInstance] getLatestMonth];
-    
+    DataModelManager *manager = [DataModelManager getInstance];
+    self.currentMonth = [manager getLatestMonth];
+    [self updateValues:manager];
 }
 
 -(void)updateValues:(DataModelManager*)manager {
+    double income = [self.currentMonth.income doubleValue];
+    double housing = [self.currentMonth.housing doubleValue];
+    double bills = [self.currentMonth.bills doubleValue];
+    double food = [self.currentMonth.food doubleValue];
+    double petrol = [self.currentMonth.petrol doubleValue];
+    double misc = [self.currentMonth.misc doubleValue];
     
+    [self.monthlyIncomeTextField setText:[[NSNumber numberWithDouble:income] getCurrencyString]];
+    [self.housingCostsTextField setText:[[NSNumber numberWithDouble:housing] getCurrencyString]];
+    [self.billsTextField setText:[[NSNumber numberWithDouble:bills] getCurrencyString]];
+    [self.foodCostsTextField setText:[[NSNumber numberWithDouble:food] getCurrencyString]];
+    [self.petrolCostsTextField setText:[[NSNumber numberWithDouble:petrol] getCurrencyString]];
+    [self.miscCostsTextField setText:[[NSNumber numberWithDouble:misc] getCurrencyString]];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
