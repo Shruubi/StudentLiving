@@ -115,6 +115,11 @@ static DataModelManager *instance;
     }
 }
 
+-(void)deleteAdditionalExpense:(AdditionalExpense*)object {
+    [self.context deleteObject:object];
+    [self persist];
+}
+
 -(Month*)getLatestMonth {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[self getMonthEntityDescription]];

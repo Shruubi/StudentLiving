@@ -19,6 +19,8 @@
 
 -(AdditionalExpense*)createNewExpense:(NSString*)desc withCost:(NSDecimalNumber*)cost;
 
+-(void)deleteAdditionalExpense:(AdditionalExpense*)object;
+
 -(BOOL)persist;
 
 -(NSNumber*)getMonthlyExpenditure:(Month*)currentMonth;
