@@ -26,6 +26,14 @@
 		E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D33199F40F6003351E5 /* AddExpenditureViewController.m */; };
 		E48D9D38199F411B003351E5 /* ExpenditureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D37199F411B003351E5 /* ExpenditureCell.m */; };
 		E48D9D3B199F423F003351E5 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = E48D9D3A199F423F003351E5 /* UIView+FormScroll.m */; };
+		E4EE5B9D19A03429006E7F82 /* datamodel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5B9B19A03429006E7F82 /* datamodel.xcdatamodeld */; };
+		E4EE5B9F19A03452006E7F82 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EE5B9E19A03452006E7F82 /* CoreData.framework */; };
+		E4EE5BA919A03752006E7F82 /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BA819A03752006E7F82 /* Month.m */; };
+		E4EE5BAC19A03753006E7F82 /* AdditionalExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BAB19A03753006E7F82 /* AdditionalExpense.m */; };
+		E4EE5BB019A0387A006E7F82 /* TabContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BAF19A0387A006E7F82 /* TabContainerViewController.m */; };
+		E4EE5BB319A038C8006E7F82 /* DataModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BB219A038C8006E7F82 /* DataModelManager.m */; };
+		E4EE5BB619A04453006E7F82 /* NSNumber+NumberExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BB519A04453006E7F82 /* NSNumber+NumberExtensions.m */; };
+		E4EE5BB919A04B73006E7F82 /* NSString+StringExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5BB819A04B73006E7F82 /* NSString+StringExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +76,20 @@
 		E48D9D37199F411B003351E5 /* ExpenditureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenditureCell.m; sourceTree = "<group>"; };
 		E48D9D39199F423F003351E5 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
 		E48D9D3A199F423F003351E5 /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
+		E4EE5B9C19A03429006E7F82 /* datamodel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = datamodel.xcdatamodel; sourceTree = "<group>"; };
+		E4EE5B9E19A03452006E7F82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E4EE5BA719A03752006E7F82 /* Month.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Month.h; sourceTree = "<group>"; };
+		E4EE5BA819A03752006E7F82 /* Month.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Month.m; sourceTree = "<group>"; };
+		E4EE5BAA19A03753006E7F82 /* AdditionalExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionalExpense.h; sourceTree = "<group>"; };
+		E4EE5BAB19A03753006E7F82 /* AdditionalExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionalExpense.m; sourceTree = "<group>"; };
+		E4EE5BAE19A0387A006E7F82 /* TabContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabContainerViewController.h; sourceTree = "<group>"; };
+		E4EE5BAF19A0387A006E7F82 /* TabContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabContainerViewController.m; sourceTree = "<group>"; };
+		E4EE5BB119A038C8006E7F82 /* DataModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelManager.h; sourceTree = "<group>"; };
+		E4EE5BB219A038C8006E7F82 /* DataModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelManager.m; sourceTree = "<group>"; };
+		E4EE5BB419A04453006E7F82 /* NSNumber+NumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+NumberExtensions.h"; sourceTree = "<group>"; };
+		E4EE5BB519A04453006E7F82 /* NSNumber+NumberExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+NumberExtensions.m"; sourceTree = "<group>"; };
+		E4EE5BB719A04B73006E7F82 /* NSString+StringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringExtensions.h"; sourceTree = "<group>"; };
+		E4EE5BB819A04B73006E7F82 /* NSString+StringExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EE5B9F19A03452006E7F82 /* CoreData.framework in Frameworks */,
 				E48D9CF1199F3351003351E5 /* CoreGraphics.framework in Frameworks */,
 				E48D9CF3199F3351003351E5 /* UIKit.framework in Frameworks */,
 				E48D9CEF199F3351003351E5 /* Foundation.framework in Frameworks */,
@@ -116,6 +139,7 @@
 		E48D9CED199F3351003351E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4EE5B9E19A03452006E7F82 /* CoreData.framework */,
 				E48D9CEE199F3351003351E5 /* Foundation.framework */,
 				E48D9CF0199F3351003351E5 /* CoreGraphics.framework */,
 				E48D9CF2199F3351003351E5 /* UIKit.framework */,
@@ -127,6 +151,7 @@
 		E48D9CF4199F3351003351E5 /* StudentLiving */ = {
 			isa = PBXGroup;
 			children = (
+				E4EE5B9919A03408006E7F82 /* coredata */,
 				E48D9D22199F33CB003351E5 /* delegate */,
 				E48D9D21199F33BE003351E5 /* lib */,
 				E48D9D1D199F3378003351E5 /* ui */,
@@ -178,6 +203,7 @@
 		E48D9D1E199F3389003351E5 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4EE5BAD19A03854006E7F82 /* tab container */,
 				E48D9D28199F40AE003351E5 /* add expenditure */,
 				E48D9D27199F4098003351E5 /* expenditures */,
 				E48D9D26199F407B003351E5 /* projections */,
@@ -206,6 +232,12 @@
 		E48D9D21199F33BE003351E5 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E4EE5BB119A038C8006E7F82 /* DataModelManager.h */,
+				E4EE5BB219A038C8006E7F82 /* DataModelManager.m */,
+				E4EE5BB419A04453006E7F82 /* NSNumber+NumberExtensions.h */,
+				E4EE5BB519A04453006E7F82 /* NSNumber+NumberExtensions.m */,
+				E4EE5BB719A04B73006E7F82 /* NSString+StringExtensions.h */,
+				E4EE5BB819A04B73006E7F82 /* NSString+StringExtensions.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -263,6 +295,35 @@
 				E48D9D37199F411B003351E5 /* ExpenditureCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		E4EE5B9919A03408006E7F82 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE5B9A19A03413006E7F82 /* models */,
+				E4EE5B9B19A03429006E7F82 /* datamodel.xcdatamodeld */,
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
+		E4EE5B9A19A03413006E7F82 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE5BAA19A03753006E7F82 /* AdditionalExpense.h */,
+				E4EE5BAB19A03753006E7F82 /* AdditionalExpense.m */,
+				E4EE5BA719A03752006E7F82 /* Month.h */,
+				E4EE5BA819A03752006E7F82 /* Month.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E4EE5BAD19A03854006E7F82 /* tab container */ = {
+			isa = PBXGroup;
+			children = (
+				E4EE5BAE19A0387A006E7F82 /* TabContainerViewController.h */,
+				E4EE5BAF19A0387A006E7F82 /* TabContainerViewController.m */,
+			);
+			path = "tab container";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,13 +425,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EE5BA919A03752006E7F82 /* Month.m in Sources */,
 				E48D9D38199F411B003351E5 /* ExpenditureCell.m in Sources */,
+				E4EE5BB619A04453006E7F82 /* NSNumber+NumberExtensions.m in Sources */,
 				E48D9CFF199F3351003351E5 /* AppDelegate.m in Sources */,
 				E48D9D31199F40EB003351E5 /* ExpendituresViewController.m in Sources */,
 				E48D9D2E199F40DD003351E5 /* ProjectionsViewController.m in Sources */,
 				E48D9D2B199F40CE003351E5 /* OverviewViewController.m in Sources */,
+				E4EE5BB919A04B73006E7F82 /* NSString+StringExtensions.m in Sources */,
+				E4EE5B9D19A03429006E7F82 /* datamodel.xcdatamodeld in Sources */,
 				E48D9D3B199F423F003351E5 /* UIView+FormScroll.m in Sources */,
+				E4EE5BB319A038C8006E7F82 /* DataModelManager.m in Sources */,
+				E4EE5BB019A0387A006E7F82 /* TabContainerViewController.m in Sources */,
 				E48D9D34199F40F6003351E5 /* AddExpenditureViewController.m in Sources */,
+				E4EE5BAC19A03753006E7F82 /* AdditionalExpense.m in Sources */,
 				E48D9CFB199F3351003351E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +642,7 @@
 				E48D9D19199F3351003351E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E48D9D1A199F3351003351E5 /* Build configuration list for PBXNativeTarget "StudentLivingTests" */ = {
 			isa = XCConfigurationList;
@@ -582,8 +651,22 @@
 				E48D9D1C199F3351003351E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4EE5B9B19A03429006E7F82 /* datamodel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4EE5B9C19A03429006E7F82 /* datamodel.xcdatamodel */,
+			);
+			currentVersion = E4EE5B9C19A03429006E7F82 /* datamodel.xcdatamodel */;
+			path = datamodel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E48D9CE3199F3351003351E5 /* Project object */;
 }

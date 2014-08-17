@@ -65,16 +65,22 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Overview" id="Q0c-ds-gcW"/>
+                    <connections>
+                        <outlet property="additionalExpensesLbl" destination="sXK-lR-Rdl" id="htv-KN-sdj"/>
+                        <outlet property="monthlyExpenditureLbl" destination="ZEc-qf-s8d" id="4Hi-wS-3lD"/>
+                        <outlet property="monthlyIncomeLbl" destination="3zr-lY-Xxd" id="LhP-CK-cuB"/>
+                        <outlet property="savingsLbl" destination="TPM-f1-Hfw" id="eV4-zk-qKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYR-qX-kea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="829" y="-298"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Container View Controller-->
         <scene sceneID="7AM-xW-u7d">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="V82-GJ-BNX" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController definesPresentationContext="YES" id="V82-GJ-BNX" customClass="TabContainerViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="u9t-Lb-GDv">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -220,7 +226,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rCJ-Hf-Afz">
-                                <rect key="frame" x="0.0" y="95" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="133" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCJ-Hf-Afz" id="fNg-hA-cGx">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -239,8 +245,28 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EJu-wk-Gkm">
+                                <rect key="frame" x="0.0" y="81" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EJu-wk-Gkm" id="M7d-xy-l5o">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Monthly Income" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Xb0-vW-55k">
+                                            <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Zbt-pc-hov" id="Iu4-6O-jBE"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kxO-Z7-GBR">
-                                <rect key="frame" x="0.0" y="147" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="185" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kxO-Z7-GBR" id="HAh-Iu-ezQ">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -260,7 +286,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DUM-ga-e82">
-                                <rect key="frame" x="0.0" y="199" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="237" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DUM-ga-e82" id="hfw-AJ-QqF">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -280,7 +306,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O43-ma-Ef7">
-                                <rect key="frame" x="0.0" y="251" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="289" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O43-ma-Ef7" id="Bg7-aG-Odc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -300,7 +326,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Kcq-dm-6cW">
-                                <rect key="frame" x="0.0" y="303" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="341" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kcq-dm-6cW" id="rUl-Xu-FEH">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -320,7 +346,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f1T-cD-5Ne">
-                                <rect key="frame" x="20" y="355" width="280" height="30"/>
+                                <rect key="frame" x="20" y="393" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update Projections">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,6 +372,8 @@
                         <outlet property="housingCostsTextField" destination="TEi-Ks-dCJ" id="y9E-aO-852"/>
                         <outlet property="miscCostsContainer" destination="Kcq-dm-6cW" id="Y6f-jN-AfV"/>
                         <outlet property="miscCostsTextField" destination="TIh-l3-Jc8" id="YmM-YW-TYL"/>
+                        <outlet property="monthlyIncomeContainer" destination="EJu-wk-Gkm" id="AKD-DD-zP4"/>
+                        <outlet property="monthlyIncomeTextField" destination="Xb0-vW-55k" id="q0m-tB-YeL"/>
                         <outlet property="petrolCostsContainer" destination="O43-ma-Ef7" id="hVW-gf-MHa"/>
                         <outlet property="petrolCostsTextField" destination="uBy-Dh-sEn" id="eC2-g1-s3l"/>
                     </connections>

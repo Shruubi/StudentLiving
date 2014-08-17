@@ -10,30 +10,40 @@
 
 #import "UIView+FormScroll.h"
 
+#import "NSNumber+NumberExtensions.h"
+#import "NSString+StringExtensions.h"
+
+#import "DataModelManager.h"
+
 @interface ProjectionsViewController () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *monthlyIncomeContainer;
 @property (weak, nonatomic) IBOutlet UITableViewCell *housingContainer;
 @property (weak, nonatomic) IBOutlet UITableViewCell *billsContainer;
 @property (weak, nonatomic) IBOutlet UITableViewCell *foodCostsContainer;
 @property (weak, nonatomic) IBOutlet UITableViewCell *petrolCostsContainer;
 @property (weak, nonatomic) IBOutlet UITableViewCell *miscCostsContainer;
 
+@property (weak, nonatomic) IBOutlet UITextField *monthlyIncomeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *housingCostsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *billsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *foodCostsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *petrolCostsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *miscCostsTextField;
 
+@property (strong, nonatomic) Month *currentMonth;
+
 @end
 
 @implementation ProjectionsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+-(void)viewWillAppear:(BOOL)animated {
+    self.currentMonth = [[DataModelManager getInstance] getLatestMonth];
+    
+}
+
+-(void)updateValues:(DataModelManager*)manager {
+    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -47,15 +57,39 @@
         [self.view scrollToView:self.petrolCostsContainer];
     } else if(textField == self.miscCostsTextField) {
         [self.view scrollToView:self.miscCostsContainer];
+    } else if(textField == self.monthlyIncomeTextField) {
+        [self.view scrollToView:self.monthlyIncomeContainer];
     }
 }
 
 -(void) textFieldDidEndEditing:(UITextField *)textField {
     [self.view scrollToY:0];
+    
+    NSString *val = textField.text;
+    textField.text = [[val asNSNumber] getCurrencyString];
+    
     [textField resignFirstResponder];
 }
 
 - (IBAction)onUpdateProjections:(id)sender {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    NSNumber *income = [formatter numberFromString:self.monthlyIncomeTextField.text];
+    NSNumber *housing = [formatter numberFromString:self.housingCostsTextField.text];
+    NSNumber *bills = [formatter numberFromString:self.billsTextField.text];
+    NSNumber *food = [formatter numberFromString:self.foodCostsTextField.text];
+    NSNumber *petrol = [formatter numberFromString:self.petrolCostsTextField.text];
+    NSNumber *misc = [formatter numberFromString:self.miscCostsTextField.text];
+    
+    self.currentMonth.income = [NSDecimalNumber decimalNumberWithDecimal:[income decimalValue]];
+    self.currentMonth.housing = [NSDecimalNumber decimalNumberWithDecimal:[housing decimalValue]];
+    self.currentMonth.bills = [NSDecimalNumber decimalNumberWithDecimal:[bills decimalValue]];
+    self.currentMonth.food = [NSDecimalNumber decimalNumberWithDecimal:[food decimalValue]];
+    self.currentMonth.petrol = [NSDecimalNumber decimalNumberWithDecimal:[petrol decimalValue]];
+    self.currentMonth.misc = [NSDecimalNumber decimalNumberWithDecimal:[misc decimalValue]];
+    
+    [[DataModelManager getInstance] persist];
 }
 
 - (IBAction)onBackgroundViewTouched:(id)sender {
@@ -64,6 +98,7 @@
     [self.foodCostsTextField resignFirstResponder];
     [self.petrolCostsTextField resignFirstResponder];
     [self.miscCostsTextField resignFirstResponder];
+    [self.monthlyIncomeTextField resignFirstResponder];
 }
 
 

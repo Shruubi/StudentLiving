@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AdditionalExpense" representedClassName="AdditionalExpense" syncable="YES">
+        <attribute name="expenseAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="expenseDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="forMonth" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Month" inverseName="additionalExpenses" inverseEntity="Month" syncable="YES"/>
+    </entity>
+    <entity name="Month" representedClassName="Month" syncable="YES">
+        <attribute name="bills" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="food" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="housing" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="income" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="misc" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="petrol" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="additionalExpenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AdditionalExpense" inverseName="forMonth" inverseEntity="AdditionalExpense" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Month" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AdditionalExpense" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
