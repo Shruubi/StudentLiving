@@ -8,7 +8,11 @@
 
 #import "AddExpenditureViewController.h"
 
+#import "DataModelManager.h"
+
 #import "UIView+FormScroll.h"
+#import "NSNumber+NumberExtensions.h"
+#import "NSString+StringExtensions.h"
 
 @interface AddExpenditureViewController () <UITextFieldDelegate>
 
@@ -22,12 +26,18 @@
 
 @implementation AddExpenditureViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(void)viewWillAppear:(BOOL)animated {
+    if(self.additionalExpense != nil) {
+        [self updateValues];
     }
-    return self;
+}
+
+-(void)updateValues {
+    NSString *desc = self.additionalExpense.expenseDescription;
+    NSString *cost = [[NSNumber numberWithDouble:[self.additionalExpense.expenseAmount doubleValue]] getCurrencyString];
+    
+    [self.expenditureDescriptionTextField setText:desc];
+    [self.expenditureCostTextField setText:cost];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -40,10 +50,41 @@
 
 -(void) textFieldDidEndEditing:(UITextField *)textField {
     [self.view scrollToY:0];
+    
+    if(textField == self.expenditureCostTextField) {
+        NSString *val = textField.text;
+        textField.text = [[val asNSNumber] getCurrencyString];
+    }
+    
     [textField resignFirstResponder];
 }
 
 - (IBAction)onSavePressed:(id)sender {
+    DataModelManager *manager = [DataModelManager getInstance];
+    Month *currentMonth = [manager getLatestMonth];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    NSString *desc = self.expenditureDescriptionTextField.text;
+    
+    NSNumber *costNum = [formatter numberFromString:self.expenditureCostTextField.text];
+    
+    NSDecimalNumber *cost = [NSDecimalNumber decimalNumberWithDecimal:[costNum decimalValue]];
+    
+    if(self.additionalExpense == nil) {
+        AdditionalExpense *expense = [manager createNewExpense:desc withCost:cost];
+        [currentMonth addAdditionalExpensesObject:expense];
+        [manager persist];
+    } else {
+        self.additionalExpense.expenseDescription = desc;
+        self.additionalExpense.expenseAmount = cost;
+        
+        [manager persist];
+    }
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)onBackgroundViewTouched:(id)sender {

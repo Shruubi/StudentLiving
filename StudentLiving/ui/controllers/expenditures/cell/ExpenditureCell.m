@@ -8,22 +8,13 @@
 
 #import "ExpenditureCell.h"
 
+#import "NSNumber+NumberExtensions.h"
+
 @implementation ExpenditureCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)populate {
+    [self.descriptionLbl setText:self.model.expenseDescription];
+    [self.costLbl setText:[[NSNumber numberWithDouble:[self.model.expenseAmount doubleValue]] getCurrencyString]];
 }
 
 @end

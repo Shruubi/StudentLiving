@@ -93,10 +93,26 @@ static DataModelManager *instance;
 
 -(BOOL)createNewMonth {
     Month* newEntry = [NSEntityDescription
-                       insertNewObjectForEntityForName:@"Month"inManagedObjectContext:self.context];
+                       insertNewObjectForEntityForName:@"Month" inManagedObjectContext:self.context];
     newEntry.timestamp = [NSDate date];
     
     return [self persist];
+}
+
+-(AdditionalExpense*)createNewExpense:(NSString*)desc withCost:(NSDecimalNumber*)cost {
+    AdditionalExpense* newEntry = [NSEntityDescription
+                       insertNewObjectForEntityForName:@"AdditionalExpense" inManagedObjectContext:self.context];
+    
+    newEntry.expenseDescription = desc;
+    newEntry.expenseAmount = cost;
+    
+    BOOL persistStatus = [self persist];
+    
+    if(persistStatus) {
+        return newEntry;
+    } else {
+        return nil;
+    }
 }
 
 -(Month*)getLatestMonth {

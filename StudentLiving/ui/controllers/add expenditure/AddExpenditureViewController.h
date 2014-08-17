@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AdditionalExpense.h"
+
 @interface AddExpenditureViewController : UIViewController
+
+@property (strong, nonatomic) AdditionalExpense *additionalExpense;
 
 @end

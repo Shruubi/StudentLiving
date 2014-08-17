@@ -17,6 +17,8 @@
 -(void)onStartup;
 -(Month*)getLatestMonth;
 
+-(AdditionalExpense*)createNewExpense:(NSString*)desc withCost:(NSDecimalNumber*)cost;
+
 -(BOOL)persist;
 
 -(NSNumber*)getMonthlyExpenditure:(Month*)currentMonth;
