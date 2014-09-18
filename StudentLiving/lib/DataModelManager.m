@@ -55,10 +55,12 @@ static DataModelManager *instance;
         NSDateComponents *nowDateComponents = [calendar
                                                components:(NSYearCalendarUnit | NSMonthCalendarUnit)
                                                      fromDate:now];
-
+        
+        NSLog(@"%@", [calendar dateFromComponents:lastEntryDateComponents]);
+        NSLog(@"%@", [calendar dateFromComponents:nowDateComponents]);
         
         //if lastEntry is earlier than now
-        if([[lastEntryDateComponents date] compare:[nowDateComponents date]] == NSOrderedAscending) {
+        if([[calendar dateFromComponents:lastEntryDateComponents] compare:[calendar dateFromComponents:nowDateComponents]] == NSOrderedAscending) {
             return NO;
         }
         
@@ -118,6 +120,19 @@ static DataModelManager *instance;
 -(void)deleteAdditionalExpense:(AdditionalExpense*)object {
     [self.context deleteObject:object];
     [self persist];
+}
+
+-(NSArray*)getAllMonths {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[self getMonthEntityDescription]];
+    
+    // Results should be in descending order of timeStamp.
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSArray *results = [self.context executeFetchRequest:request error:NULL];
+    
+    return results;
 }
 
 -(Month*)getLatestMonth {
@@ -205,6 +220,28 @@ static DataModelManager *instance;
     NSLog(@"%@", final);
     
     return final;
+}
+
+-(NSInteger)largestSavings {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[self getMonthEntityDescription]];
+    
+    // Results should be in descending order of timeStamp.
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    NSArray *results = [self.context executeFetchRequest:request error:NULL];
+    
+    double best = 0;
+    
+    for (Month *month in results) {
+        double thisMonth = [[self getMonthlySavings:month] doubleValue];
+        if(thisMonth > best) {
+            best = thisMonth;
+        }
+    }
+    
+    return best;
 }
 
 @end

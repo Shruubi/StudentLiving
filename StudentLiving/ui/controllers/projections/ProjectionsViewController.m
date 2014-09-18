@@ -38,6 +38,14 @@
 @implementation ProjectionsViewController
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setBarTintColor:[UIColor
+                                                              colorWithRed:108.0/255.0
+                                                              green:173.0/255.0
+                                                              blue:255.0/255.0
+                                                              alpha:1.0]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
     DataModelManager *manager = [DataModelManager getInstance];
     self.currentMonth = [manager getLatestMonth];
     [self updateValues:manager];
@@ -85,8 +93,10 @@
 }
 
 - (IBAction)onUpdateProjections:(id)sender {
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_AU"];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setLocale:locale];
     
     NSNumber *income = [formatter numberFromString:self.monthlyIncomeTextField.text];
     NSNumber *housing = [formatter numberFromString:self.housingCostsTextField.text];
@@ -103,6 +113,9 @@
     self.currentMonth.misc = [NSDecimalNumber decimalNumberWithDecimal:[misc decimalValue]];
     
     [[DataModelManager getInstance] persist];
+    
+    NSNotification *notification = [[NSNotification alloc] initWithName:@"updatedProjections" object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 - (IBAction)onBackgroundViewTouched:(id)sender {

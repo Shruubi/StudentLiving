@@ -16,17 +16,18 @@
 
 @implementation TabContainerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+-(void)viewDidLoad {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleUpdatedProjections:)
+                                                 name:@"updatedProjections"
+                                               object:nil];
+    
+    [[DataModelManager getInstance] onStartup];
 }
 
--(void)viewDidLoad {
-    [[DataModelManager getInstance] onStartup];
+-(void)handleUpdatedProjections:(id)sender {
+    NSLog(@"called notification listener");
+    [self setSelectedIndex:0];
 }
 
 @end

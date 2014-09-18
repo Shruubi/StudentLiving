@@ -16,6 +16,7 @@
 
 -(void)onStartup;
 -(Month*)getLatestMonth;
+-(NSArray*)getAllMonths;
 
 -(AdditionalExpense*)createNewExpense:(NSString*)desc withCost:(NSDecimalNumber*)cost;
 
@@ -27,5 +28,7 @@
 -(NSNumber*)getMonthlyIncome:(Month*)currentMonth;
 -(NSNumber*)getMonthlyExpenses:(Month*)currentMonth;
 -(NSNumber*)getMonthlySavings:(Month*)currentMonth;
+
+-(NSInteger)largestSavings;
 
 @end

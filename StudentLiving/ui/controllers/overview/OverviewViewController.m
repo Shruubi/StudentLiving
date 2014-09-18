@@ -26,6 +26,14 @@
     DataModelManager *manager = [DataModelManager getInstance];
     [self updateValues:manager];
     
+    [self.navigationController.navigationBar setBarTintColor:[UIColor
+                                                              colorWithRed:108.0/255.0
+                                                              green:173.0/255.0
+                                                              blue:255.0/255.0
+                                                              alpha:1.0]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
 }
 
 -(void)updateValues:(DataModelManager*)manager {

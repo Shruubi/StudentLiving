@@ -15,8 +15,11 @@
 }
 
 -(NSString *)getCurrencyString {
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_AU"];
+    
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setLocale:locale];
     
     return [formatter stringFromNumber:self];
 }

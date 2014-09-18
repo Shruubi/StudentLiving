@@ -30,6 +30,14 @@
 @implementation ExpendituresViewController
 
 -(void)viewDidAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setBarTintColor:[UIColor
+                                                              colorWithRed:108.0/255.0
+                                                              green:173.0/255.0
+                                                              blue:255.0/255.0
+                                                              alpha:1.0]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.navigationController.navigationBar setTranslucent:YES];
+    
     self.dataSource = [[NSMutableArray alloc] init];
     
     [self loadDataSource];

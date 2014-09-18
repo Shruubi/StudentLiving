@@ -11,5 +11,6 @@
 @interface NSString (StringExtensions)
 
 -(NSNumber*)asNSNumber;
+-(BOOL)isEmpty;
 
 @end

@@ -18,4 +18,12 @@
     return result;
 }
 
+-(BOOL)isEmpty {
+    if([self isEqualToString:@""]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 @end
